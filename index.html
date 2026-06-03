@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatBot</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="chat-app">
+
+    <!-- HEADER -->
+    <div class="chat-header">
+      <div class="bot-avatar">🤖</div>
+      <div class="bot-info">
+        <div class="bot-name">Aria</div>
+        <div class="bot-status" id="botStatus">Online</div>
+      </div>
+      <button class="clear-btn" onclick="clearChat()">🗑 Clear</button>
+    </div>
+
+    <!-- MESSAGES -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div class="avatar">🤖</div>
+        <div class="bubble">
+          Hey there! I'm <strong>Aria</strong>, your AI assistant. 👋<br/>
+          What's your name?
+        </div>
+        <div class="timestamp">Just now</div>
+      </div>
+    </div>
+
+    <!-- SUGGESTIONS -->
+    <div class="suggestions" id="suggestions">
+      <button onclick="sendSuggestion('What can you do?')">What can you do?</button>
+      <button onclick="sendSuggestion('Tell me a joke')">Tell me a joke</button>
+      <button onclick="sendSuggestion('How are you?')">How are you?</button>
+      <button onclick="sendSuggestion('Give me a quote')">Give me a quote</button>
+    </div>
+
+    <!-- INPUT -->
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type a message..."
+             onkeydown="if(event.key==='Enter') sendMessage()"/>
+      <button class="send-btn" onclick="sendMessage()">➤</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
